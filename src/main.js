@@ -16,8 +16,6 @@ const generateDiv = (divNum = 20 * 20, className = "grid-20x20") => {
     let gridDiv = document.createElement("div");
     canvasContainer.classList.remove("grid-10x10", "grid-20x20", "grid-30x30");
     canvasContainer.classList.add(className);
-    gridDiv.style.width = "10px";
-    gridDiv.style.height = "10px";
     canvasContainer.appendChild(gridDiv);
   }
 };
@@ -37,10 +35,11 @@ const chooseGrid = () => {
         generateDiv(20 * 20, "grid-20x20");
       } else if (button.classList.contains("30x30")) {
         sizeButtons[2].classList.add("active");
-        generateDiv(30 * 30), "grid-30x30";
+        generateDiv(30 * 30, "grid-30x30");
       }
     });
   });
 };
 
 chooseGrid();
+generateDiv();

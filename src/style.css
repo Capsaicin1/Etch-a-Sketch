@@ -1,5 +1,38 @@
 .canvas-container {
-  background-color: white;
+  display: inline-grid;
+  gap: 1px;
+  border: 5px solid;
   border-radius: 5px;
   box-shadow: 0 0 7px rgb(44, 43, 43);
+}
+
+.canvas-container > div {
+  background-color: aqua;
+}
+
+.grid-10x10 {
+  grid-template-columns: repeat(10, auto);
+}
+
+.grid-10x10 > div {
+  height: 47px;
+  width: 47px;
+}
+
+.grid-20x20 {
+  grid-template-columns: repeat(20, auto);
+}
+
+.grid-20x20 > div {
+  height: 23px;
+  width: 23px;
+}
+
+.grid-30x30 {
+  grid-template-columns: repeat(30, auto);
+}
+
+.grid-30x30 > div {
+  height: 15px;
+  width: 15px;
 }
