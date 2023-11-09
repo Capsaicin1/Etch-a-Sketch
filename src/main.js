@@ -41,5 +41,56 @@ const chooseGrid = () => {
   });
 };
 
+const generateColor = (name, color) => {
+  const gridItem = document.querySelectorAll(".canvas-container > div");
+  gridItem.forEach((item) => {
+    if (name === "warm" || name === "cold") {
+      const randomColors = color[Math.floor(Math.random() * color.length)];
+      item.addEventListener("mouseenter", (e) => {
+        e.target.style.backgroundColor = randomColors;
+      });
+    } else if (name === "black" || name === "white") {
+      item.addEventListener("mouseenter", (e) => {
+        e.target.style.backgroundColor = color;
+      });
+    }
+  });
+};
+
+const chooseColor = () => {
+  const colorButtons = document.querySelectorAll(".rectangle");
+  colorButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      removeCurrentStyle(colorButtons);
+      if (button.classList.contains("black")) {
+        colorButtons[0].classList.add("active");
+        generateColor("black", "#000000");
+      } else if (button.classList.contains("white")) {
+        colorButtons[1].classList.add("active");
+        generateColor("white", "#FFFFFF");
+      } else if (button.classList.contains("warm")) {
+        colorButtons[2].classList.add("active");
+        generateColor("warm", [
+          "#ffad33",
+          "#ff931f",
+          "#ff7e33",
+          "#fa5e1f",
+          "#ec3f13",
+        ]);
+      } else if (button.classList.contains("cold")) {
+        colorButtons[3].classList.add("active");
+        generateColor("cold", [
+          "#5e60ce",
+          "#5390d9",
+          "#4ea8de",
+          "#48bfe3",
+          "#56cfe1",
+        ]);
+      }
+    });
+  });
+};
+
 chooseGrid();
 generateDiv();
+chooseColor();
