@@ -1,8 +1,3 @@
-// const canvasContainer = document.querySelector(".canvas-container");
-// canvasContainer.innerHTML = "<div>";
-// const div = document.querySelector(".canvas-container div");
-// div.innerHTML = "<p>";
-
 const removeCurrentStyle = (buttons) => {
   buttons.forEach((button) => {
     button.classList.remove("active");
